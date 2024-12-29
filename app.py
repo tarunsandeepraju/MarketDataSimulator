@@ -15,7 +15,7 @@ def send_data():
         print(f"Received data: {data}")  # Debug: Print received data
         kafka_producer.send('market_data', value=data)
         kafka_producer.flush()
-        return jsonify({"message": "Data sent to Kafka"}), 200
+        return jsonify({"message": "MarketData sent successfully"}), 200
     except Exception as e:
         print(f"Error sending data: {e}")
         return jsonify({"error": str(e)}), 500
